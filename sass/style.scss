@@ -1,0 +1,61 @@
+@mixin border-radius($radius) {
+	border-radius: $radius;
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+}
+
+@mixin box-shadow($left, $top, $radius, $color) {
+	box-shadow: $left $top $radius $color;
+	-webkit-box-shadow: $left $top $radius $color;
+	-moz-box-shadow: $left $top $radius $color;
+}
+
+body {
+    background: #EEEEEE;
+    
+    div {
+        font-family: 'Open Sans', sans-serif;
+        @include box-shadow(0px, 5px, 2px, #222831);
+        @include border-radius(10px);
+        background: #393E46;
+        position: relative;
+        height: 40%;
+        width: 50%;
+        margin: 0 auto;
+
+        h2 {
+            top: 10;
+            left: 10;
+            text-align: center;
+            -webkit-text-fill-color: #00ADB5;
+            position: relative;
+        }
+
+        img {
+            position: relative;
+            max-width: 50%;
+            margin: 0 auto;
+            display: block;
+        }
+
+        button {
+            @include box-shadow(2px, 5px, 2px, #222831);
+            height: 10%;
+            width: 15%;
+            background: #00ADB5;
+            border: none;
+        }
+
+        #previous {
+            position: absolute;
+            bottom: 10;
+            left: 10;
+        }
+
+        #next {
+            position: absolute;
+            bottom: 10;
+            right: 10;
+        }
+    }
+}
